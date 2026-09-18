@@ -1,10 +1,19 @@
-/* Degradado DataLabs: azul corporativo, con aproximadamente cinco puntos porcentuales más de opacidad. No modifica posición ni animación de las ilustraciones. */
-.hero{background-color:#fff;background-image:url('datalabs-hero-pattern.svg'),radial-gradient(ellipse 45% 62% at -7% 12%,rgba(32,78,129,.41),rgba(83,153,203,.19) 47%,transparent 88%),radial-gradient(ellipse 45% 65% at 107% 15%,rgba(32,78,129,.39),rgba(104,176,219,.20) 48%,transparent 88%),radial-gradient(ellipse 63% 41% at 50% 106%,rgba(45,113,180,.27),transparent 90%),linear-gradient(180deg,#edf5fc 0%,#f8fbff 28%,#fff 45%,#fff 72%,#edf5fd 100%)}
-.hero:before{background-image:linear-gradient(rgba(32,78,129,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(32,78,129,.055) 1px,transparent 1px)}
+/* DataLabs: degradado azul corporativo al 10 % de opacidad; mantiene las ilustraciones y sus animaciones. */
+.hero{background-color:#fff;background-image:url('datalabs-hero-pattern.svg'),radial-gradient(ellipse 45% 62% at -7% 12%,rgba(32,78,129,.10),rgba(83,153,203,.045) 47%,transparent 88%),radial-gradient(ellipse 45% 65% at 107% 15%,rgba(32,78,129,.10),rgba(104,176,219,.045) 48%,transparent 88%),radial-gradient(ellipse 63% 41% at 50% 106%,rgba(45,113,180,.10),transparent 90%),linear-gradient(180deg,#f7faff 0%,#fcfdff 28%,#fff 45%,#fff 72%,#f7faff 100%)}
+.hero:before{background-image:linear-gradient(rgba(32,78,129,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(32,78,129,.035) 1px,transparent 1px)}
+/* Formulario: etiquetas encima de cada campo, anchura uniforme y separación consistente. */
+.contact-form{grid-template-columns:minmax(0,1fr);gap:9px;width:100%;max-width:640px}
+.contact-form label:not(.privacy){display:block;grid-column:1/-1;align-self:auto;margin:9px 0 0;font-size:13px;line-height:1.45}
+.contact-form input:not([type=checkbox]),.contact-form textarea{display:block;grid-column:1/-1;width:100%;min-width:0;margin:0;padding:14px 16px;border-radius:12px;font-size:14px;line-height:1.5}
+.contact-form input:not([type=checkbox]){min-height:49px}
+.contact-form textarea{min-height:140px}
+.contact-form .privacy{grid-column:1/-1;margin:5px 0 0;align-items:flex-start}
+.contact-form button{grid-column:1/-1;margin-top:9px}
+.contact-form .form-status{grid-column:1/-1}
 /* Acceso visible incluso antes de cargar el widget; se sustituye por el botón nativo de n8n. */
 .datalabs-chat-entry{position:fixed;right:20px;bottom:86px;z-index:10010;width:54px;height:54px;border:0;border-radius:50%;display:grid;place-items:center;background:#0b2340;color:#fff;box-shadow:0 5px 19px rgba(5,27,51,.28);cursor:pointer}
 .datalabs-chat-entry svg{width:27px;height:27px;fill:currentColor}
 .datalabs-chat-entry[hidden]{display:none!important}
 #n8n-chat .chat-window-wrapper{z-index:10010!important}
 .cookie-banner:not([hidden])~.datalabs-chat-entry{z-index:10010}
-@media(max-width:600px){.datalabs-chat-entry{right:15px;bottom:76px;width:49px;height:49px}}
+@media(max-width:600px){.datalabs-chat-entry{right:15px;bottom:76px;width:49px;height:49px}.contact-form{max-width:100%}}
