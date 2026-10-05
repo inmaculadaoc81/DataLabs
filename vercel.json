@@ -1,1 +1,21 @@
-{"cleanUrls":true,"trailingSlash":false}
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/sitemap_index.xml",
+      "destination": "/sitemap.xml",
+      "permanent": true
+    },
+    {
+      "source": "/:wp(.*-sitemap\\d*\\.xml)",
+      "destination": "/sitemap.xml",
+      "permanent": true
+    },
+    {
+      "source": "/((?!(?:datalabs-hero-chat-fix\\.css|datalabs-hero-pattern\\.svg|datalabs-hero-chat-fix|datalabs-hero-pattern|datalabs\\.css|package\\.json|datalabs\\.js|sitemap\\.xml|vercel\\.json|index\\.html|README\\.txt|robots\\.txt|datalabs|_vercel|package|sitemap|README|robots|vercel|index|api|img)(?:[/.]|$)).+)",
+      "destination": "/",
+      "permanent": true
+    }
+  ]
+}
