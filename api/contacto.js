@@ -1,4 +1,4 @@
-const nodemailer=require('nodemailer');
+const nodemailer=require("./_correo.js");
 const clean=(value,max=4000)=>String(value??'').replace(/[<>\r\n]/g,' ').trim().slice(0,max);
 const validEmail=value=>/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
 module.exports=async(req,res)=>{
