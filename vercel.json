@@ -1,6 +1,14 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
+  "functions": {
+    "api/blog.js": { "includeFiles": "index.html" }
+  },
+  "rewrites": [
+    { "source": "/blog", "destination": "/api/blog" },
+    { "source": "/blog/:slug", "destination": "/api/blog?slug=:slug" },
+    { "source": "/sitemap.xml", "destination": "/api/sitemap" }
+  ],
   "redirects": [
     {
       "source": "/sitemap_index.xml",
@@ -13,7 +21,7 @@
       "permanent": true
     },
     {
-      "source": "/((?!(?:datalabs-hero-chat-fix\\.css|datalabs-hero-pattern\\.svg|datalabs-hero-chat-fix|datalabs-hero-pattern|datalabs\\.css|package\\.json|datalabs\\.js|sitemap\\.xml|vercel\\.json|index\\.html|README\\.txt|robots\\.txt|datalabs|_vercel|package|sitemap|README|robots|vercel|index|api|img)(?:[/.]|$)).+)",
+      "source": "/((?!(?:datalabs-hero-chat-fix\\.css|datalabs-hero-pattern\\.svg|datalabs-hero-chat-fix|datalabs-hero-pattern|datalabs\\.css|package\\.json|datalabs\\.js|sitemap\\.xml|vercel\\.json|index\\.html|README\\.txt|robots\\.txt|datalabs|_vercel|package|sitemap|README|robots|vercel|index|blog|api|img)(?:[/.]|$)).+)",
       "destination": "/",
       "permanent": true
     }

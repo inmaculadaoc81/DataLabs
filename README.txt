@@ -60,3 +60,14 @@ VERIFICADO (todo correcto, sin cambios necesarios):
 - package.json con el nombre correcto del paquete.
 - Sin ninguna referencia cruzada a SmartSheets, FlujoPro ni otras
   marcas de la familia en ningún archivo.
+
+BLOG (/blog):
+- Los artículos NO viven en este repositorio: los genera y publica el agente
+  SEO de Kelatos (Agentes V2 → organización «DataLabs», clave datalabs)
+  y se leen en vivo de la API pública de Kelatos, sin token:
+  https://db.affirmatechnology.com/kelatos-api/publico/blog?org=datalabs
+- api/blog.js + lib/blog.js generan /blog y /blog/<slug> en el servidor
+  (copian cabecera, pie, WhatsApp, chat, cookies y datalabs.js de index.html).
+- api/sitemap.js genera /sitemap.xml (se eliminó el sitemap.xml estático).
+- Estilos en blog.css. Enlace «Blog» en el menú (escritorio y móvil) y en el pie.
+- vercel.json redirige a la home las URLs antiguas; el blog queda fuera.
