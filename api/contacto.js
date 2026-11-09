@@ -5,6 +5,9 @@ module.exports=async(req,res)=>{
   if(req.method!=='POST'){res.setHeader('Allow','POST');return res.status(405).json({ok:false,error:'Método no permitido'})}
   try{
     const body=req.body||{};
+    if(clean(body.website))return res.status(200).json({ok:true});
+    const ts=Number(body.ts);
+    if(!ts||Date.now()-ts<2000)return res.status(200).json({ok:true});
     const nombre=clean(body.nombre,120),empresa=clean(body.empresa,160),email=clean(body.email,180),telefono=clean(body.telefono,60),mensaje=clean(body.mensaje,4000);
     if(!nombre||!empresa||!email||!telefono||!mensaje||!validEmail(email))return res.status(400).json({ok:false,error:'Revisa los datos del formulario'});
     const {SMTP_HOST,SMTP_USER,SMTP_PASS,CONTACT_EMAIL}=process.env;
